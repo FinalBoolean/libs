@@ -1,0 +1,87 @@
+#            _____ _______ _____   ____
+#     /\    / ____|__   __|  __ \ / __ \
+#    /  \  | (___    | |  | |__) | |  | |
+#   / /\ \  \___ \   | |  |  _  /| |  | |
+#  / ____ \ ____) |  | |  | | \ \| |__| |
+# /_/    \_\_____/   |_|  |_|  \_\\____/
+Astro:
+  # Important Astro Information
+  server: 'Astro' # Server Name (Webhooks)
+  prefix: '&7[&6&l⋀&7]' # Prefix for the anti cheat!
+  # Astro Settings
+  settings:
+    logging: true
+    alert-delay: 30
+    bedrock-support: true
+    client-check: true
+    runnable-tps: true
+  # Astro Messages
+  messages:
+    alert-message: '%prefix% &e%player% &7has failed &e%check% (%type%)&6%symbol% &7(&ex%vl%&7)'
+    log-format: '[%date%] %check% (%type%) VL: %vl% [TPS: %tps%] [tPing: %tping%] [Info: %info%]'
+    client-brand-message: '%prefix% &e%player% &7joined using &7[&e%brand%&7]'
+    anticrash-message: '%prefix% &e%player% &7was kicked for suspicious activity.'
+    no-permission-message: '&cYou do not have permission.'
+  alerts-hover-message: |-
+    &f* Desc: &7%desc%
+     &f* Info: &7%info%
+     &f* CPS: &7%cps%
+     &f* Sensitivity: &7%sensitivity%
+    &cClick to teleport. &7(Ping: %ping% &7TPS: &7Version: &f%version%&7)
+  alerts-click-command:
+    command: /tp %player%
+  bungee: # Bungee Support
+    enabled: false
+    bans: false
+  anticrash: # Anticrash settings
+    enabled: true
+    payloads: true
+    payload-spam: true
+    kick-message: 'java.net.IOException Connection timed out: no further information'
+  unallowed-clients: # Blacklist unwanted clients
+    enabled: true
+    brands:
+      - Crystalware
+      - Vivecraft
+      - LOLIMAHACKER
+      - WDL|INIT
+    kick-message: 'This client is not allowed on our server.'
+  discord: # Discord webhooks here
+    enabled: false
+    alert-url: 'INSERT_HERE'
+    ban-url: 'INSERT_HERE'
+  pullback: # Choose either generic / pull-down / new-generic
+    enabled: false
+    type: generic
+  punishments: # Punishments for Cheaters.
+    enabled: true
+    ban-command: 'ban %player% Hacked Client'
+    announce: false
+    message: |-
+      &8- &e&lAstro &7has removed &f%player% due to &fcheating.
+  ghostblock-support: # Ghost Block Settings
+    enabled: true
+    lagback-on-walk: true
+    # Put either generic / pull-down / new-generic
+    lagback-type: generic
+    # Removes the ghost blocks client side
+    update-on-walk: false
+  antivpn: # Blocks people from using a VPN/Proxy
+    enabled: false
+    vpncheck: true
+    anti-proxy: true
+    kick-message: '&cYou cannot join on a VPN/Proxy'
+  packetevents: # Packet Events settings.
+    compact-inject: true
+    kick-uninjected: true
+    kick-message: 'Failed to load your data, please rejoin.'
+  banwaves:
+    # Enable the punish wave?
+    enabled: false
+    # Will add to the punishwave if it exceeds the check:vl
+    settings:
+      - "KillAura:10"
+      - "AimAssist:5"
+      - "AutoClicker:10"
+      - "Reach:3"
+    delay: 1000

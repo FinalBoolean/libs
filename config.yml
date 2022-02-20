@@ -24,6 +24,7 @@ Astro:
     client-brand-message: '%prefix% &e%player% &7joined using &7[&e%brand%&7]'
     anticrash-message: '%prefix% &e%player% &7was kicked for suspicious activity.'
     no-permission-message: '&cYou do not have permission.'
+    hide-ac-message: ""
   alerts-hover-message: |-
     &f* Desc: &7%desc%
      &f* Info: &7%info%
@@ -65,6 +66,7 @@ Astro:
   pullback: # Choose either generic / pull-down / new-generic
     enabled: false
     type: generic
+    pullback-vl: 3
   punishments: # Punishments for Cheaters.
     enabled: true
     ban-command: 'ban %player% Hacked Client'
@@ -106,12 +108,12 @@ Astro:
       &7Currently Using Version: &e%version%
       &7&m--------------------------------------------------
   banwaves:
-      # Enable the punish wave?
-      enabled: false
-      # Will add to the punishwave if it exceeds the check:vl
-      settings:
-        - "KillAura:10"
-        - "AimAssist:5"
-        - "AutoClicker:10"
-        - "Reach:3"
-      delay: 1000
+    # Enable the punish wave?
+    enabled: false
+    # Will add to the punishwave if it exceeds the check:vl
+    settings:
+      - "KillAura:10"
+      - "AimAssist:5"
+      - "AutoClicker:10"
+      - "Reach:3"
+    delay: 1000

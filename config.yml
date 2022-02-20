@@ -105,13 +105,13 @@ Astro:
        &e- &7/Astro reload - &fReloads config.      
       &7Currently Using Version: &e%version%
       &7&m--------------------------------------------------
-banwaves:
-    # Enable the punish wave?
-    enabled: false
-    # Will add to the punishwave if it exceeds the check:vl
-    settings:
-      - "KillAura:10"
-      - "AimAssist:5"
-      - "AutoClicker:10"
-      - "Reach:3"
-    delay: 1000
+  banwaves:
+      # Enable the punish wave?
+      enabled: false
+      # Will add to the punishwave if it exceeds the check:vl
+      settings:
+        - "KillAura:10"
+        - "AimAssist:5"
+        - "AutoClicker:10"
+        - "Reach:3"
+      delay: 1000

@@ -6,8 +6,10 @@
 # /_/    \_\_____/   |_|  |_|  \_\\____/
 Astro:
   # Important Astro Information
-  server: 'Astro' # Server Name (Webhooks)
+  server-name: 'Astro'
+  command: "astro"
   prefix: '&7[&6&l⋀&7]' # Prefix for the anti cheat!
+  experimental-symbol: 'Δ'
   # Astro Settings
   settings:
     logging: true
@@ -35,8 +37,9 @@ Astro:
     bans: false
   anticrash: # Anticrash settings
     enabled: true
-    payloads: true
+    payloads: false
     payload-spam: true
+    packet-spam: true
     kick-message: 'java.net.IOException Connection timed out: no further information'
   unallowed-clients: # Blacklist unwanted clients
     enabled: true
@@ -46,10 +49,19 @@ Astro:
       - LOLIMAHACKER
       - WDL|INIT
     kick-message: 'This client is not allowed on our server.'
-  discord: # Discord webhooks here
+  discord: # Discord webhooks here (WIP)
     enabled: false
-    alert-url: 'INSERT_HERE'
-    ban-url: 'INSERT_HERE'
+    user-name: 'Astro'
+    alerts:
+      title: '%server% | %player% failed %check% %type% (x%vl%)'
+      color: 'GRAY'
+      show-icon-thumbnail: true
+      alert-url: 'INSERT_HERE'
+    punishments:
+      title: '%server% | %player% was banned. Failed: %check% %type% (x%vl%)'
+      color: 'RED'
+      show-icon-thumbnail: true
+      ban-url: 'INSERT_HERE'
   pullback: # Choose either generic / pull-down / new-generic
     enabled: false
     type: generic
@@ -75,7 +87,25 @@ Astro:
     compact-inject: true
     kick-uninjected: true
     kick-message: 'Failed to load your data, please rejoin.'
-  banwaves:
+  commands:
+    alerts:
+      enable: '%prefix% &aYou have enabled alerts!'
+      disable: '%prefix% &cYou have disabled alerts!'
+    usage: '&eUsage: /astro %check% %syntax%'
+    help: |-
+      &7&m--------------------------------------------------
+      &6Astro Anticheat:
+       &e- &7/Astro gui - &fOpens the astro GUI.
+       &e- &7/Astro alers - &fToggle cheat alerts.
+       &e- &7/Astro info <player> - &fInformation about the players client.
+       &e- &7/Astro exempt <player> - &fExempts the player from checks.
+       &e- &7/Astro logs <player> - &fShows logs of a player.
+       &e- &7/Astro pastelogs - &fShows logs of a player.
+       &e- &7/Astro timings - &fShows timings of astro.
+       &e- &7/Astro reload - &fReloads config.      
+      &7Currently Using Version: &e%version%
+      &7&m--------------------------------------------------
+banwaves:
     # Enable the punish wave?
     enabled: false
     # Will add to the punishwave if it exceeds the check:vl
